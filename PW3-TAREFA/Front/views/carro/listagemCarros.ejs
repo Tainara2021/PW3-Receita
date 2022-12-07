@@ -1,0 +1,38 @@
+<%- include('../partials/header.ejs')  %>
+
+    <title>LISTAGEM DE receitas</title>
+
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <%- include('../partials/menu.ejs')  %>
+
+        <div class="card mt-2">
+            <div class="card-header">LISTAGEM DE receitas</div>
+        </div>
+
+        <%
+            receitas.forEach(Receita=>{
+        %>
+
+            <div class="card mt-2">
+
+                <div class="card-body">
+                    <%= Receita.nome_Receita %>
+                </div>
+
+                <a href="/formEdicaoreceitas/<%= Receita.id %>" class="btn btn-success mt-1">EDITAR</a>
+                <a href="/deletarReceita/<%= Receita.id %>" class="btn btn-danger mt-1">EXCLUIR</a>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+</body>
+
+<%- include('../partials/footer.ejs')  %>
